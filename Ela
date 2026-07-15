@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ela – Team Presentation</title>
+
+    <link rel="stylesheet" href="/src/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at top left, #f1e9fa 0, transparent 35%),
+                #f8f7fa;
+            color: #252029;
+            line-height: 1.7;
+        }
+
+        .page-container {
+            width: min(90%, 950px);
+            margin: 50px auto;
+        }
+
+        .profile-header {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(
+                135deg,
+                #24112f 0%,
+                #4b1f68 45%,
+                #7e3fa1 100%
+            );
+            color: white;
+            padding: 65px 55px;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 45px rgba(65, 27, 87, 0.25);
+            animation: fade-up 0.8s ease;
+        }
+
+        .profile-header::before,
+        .profile-header::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(4px);
+            animation: floating 7s ease-in-out infinite;
+        }
+
+        .profile-header::before {
+            width: 230px;
+            height: 230px;
+            top: -100px;
+            right: -50px;
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        .profile-header::after {
+            width: 150px;
+            height: 150px;
+            bottom: -75px;
+            left: 35%;
+            background: rgba(205, 155, 255, 0.12);
+            animation-delay: 1.5s;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            padding: 7px 13px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-header h1 {
+            margin: 0 0 12px;
+            font-size: 46px;
+            line-height: 1.15;
+        }
+
+        .profile-header h2 {
+            margin: 0 0 22px;
+            color: #eadcf2;
+            font-size: 19px;
+            font-weight: 400;
+        }
+
+        .profile-header p {
+            max-width: 760px;
+            margin: 0;
+            color: #f5eff8;
+            font-size: 17px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 30px;
+            border: 1px solid rgba(100, 59, 123, 0.08);
+            border-radius: 18px;
+            box-shadow: 0 10px 28px rgba(57, 34, 70, 0.08);
+            margin-bottom: 25px;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+            animation: fade-up 0.8s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 34px rgba(57, 34, 70, 0.13);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 18px;
+        }
+
+        .card-title h2 {
+            margin: 0;
+            color: #4b245e;
+            font-size: 26px;
+        }
+
+        .icon-box {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: 13px;
+            background: linear-gradient(135deg, #eee2f5, #e3d0ef);
+            color: #67327e;
+        }
+
+        .icon-box svg {
+            width: 23px;
+            height: 23px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .card p {
+            margin-top: 5px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: linear-gradient(135deg, #f1e8f6, #eadcf2);
+            color: #532766;
+            padding: 9px 14px;
+            border: 1px solid #e0cce9;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #e8d7f0, #dcc3e8);
+        }
+
+        .page-footer {
+            text-align: center;
+            color: #746d78;
+            padding: 25px 0;
+            font-size: 14px;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floating {
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(12px) translateX(-8px);
+            }
+        }
+
+        @media (max-width: 750px) {
+            .profile-header {
+                padding: 45px 25px;
+            }
+
+            .profile-header h1 {
+                font-size: 36px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <nav class="navigation">
+
+            <a class="logo" href="/src/index.html">
+                Team Presentation
+            </a>
+
+            <div class="navigation-links">
+
+                <a href="/src/index.html">Startseite</a>
+
+                <div class="dropdown">
+
+                    <a href="#" class="dropbtn">
+                        Mitglieder ▾
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="/src/personen/moritz/moritz.html">Moritz</a>
+                        <a href="/src/personen/louis/louis.html">Louis</a>
+                        <a href="/src/personen/kadir/kadir.html">Kadir</a>
+                        <a href="/src/personen/DEIN-ORDNER/DEINE-DATEI.html">
+                            Ela
+                        </a>
+                    </div>
+
+                </div>
+
+                <a href="/src/about.html">Über uns</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class="page-container">
+
+        <section class="profile-header">
+
+            <div class="header-content">
+
+                <div class="profile-label">
+
+                    <svg
+                        width="17"
+                        height="17"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+                        <path d="M12 3l2.3 4.7L19.5 9l-3.8 3.7.9 5.3-4.6-2.5L7.4 18l.9-5.3L4.5 9l5.2-1.3L12 3z"></path>
+                    </svg>
+
+                    Accenture Schülerpraktikum
+
+                </div>
+
+                <h1>Ela G.</h1>
+
+                <h2>
+                    Schülerin · 16 Jahre
+                </h2>
+
+                <p>
+                    Hallo, ich bin Ela und nehme am Accenture
+                    Online-Schülerpraktikum teil. Ich interessiere mich besonders
+                    für IT. Während des Praktikums möchte ich mehr
+                    über Softwareentwicklung und die Zusammenarbeit
+                    in einem Entwicklerteam lernen.
+                </p>
+
+            </div>
+
+        </section>
+
+        <div class="content-grid">
+
+            <div>
+
+                <section class="card">
+
+                    <div class="card-title">
+
+                        <span class="icon-box">
+
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="4"></circle>
+                                <path d="M4.5 21c.8-4.2 3.3-6.5 7.5-6.5s6.7 2.3 7.5 6.5"></path>
+                            </svg>
+
+                        </span>
+
+                        <h2>Über mich</h2>
+
+                    </div>
+
+                    <p>
+                        Ich habe die 10. Klasse beendet.
+                    </p>
+
+                    <p>
+                        Besonders interessieren mich Themen wie KI, Astronomie und Chemie.
+                        In meiner Freizeit beschäftige ich mich außerdem
+                        gerne mit Kunst und zeichne viel.
+                    </p>
+
+                </section>
+
+            </div>
+
+            <div>
+
+                <section class="card">
+
+                    <div class="card-title">
+
+                        <span class="icon-box">
+
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+                                <path d="M8 20h8"></path>
+                                <path d="M12 16v4"></path>
+                                <path d="M8.5 9.5l2 2-2 2"></path>
+                                <path d="M13 13.5h3"></path>
+                            </svg>
+
+                        </span>
+
+                        <h2>Kenntnisse</h2>
+
+                    </div>
+
+                    <div class="skills">
+                        <span class="skill">HTML</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Git</span>
+                        <span class="skill">GitHub</span>
+                        <span class="skill">VS Code</span>
+                        <span class="skill">Microsoft Office</span>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="page-footer">
+
+        <p>
+            Team Presentation · Accenture Schülerpraktikum · Ela
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

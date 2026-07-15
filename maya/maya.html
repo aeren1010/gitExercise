@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steckbrief von Maya</title>
+
+    <link rel="stylesheet" href="stylesm.css">
+</head>
+
+<body>
+<div class="topbar">
+
+    <a href="https://instagram.com/maya.vka" target="_blank">
+        📸 Instagram
+    </a>
+
+    <a href="mailto:maya.klemenc@gmail.com">
+        📧 E-Mail
+    </a>
+
+    <a href="tel:+4915737624705">
+        📞 +49 15737624705
+    </a>
+
+</div>
+
+<div class="container">
+
+    <h1>Das bin ich – Maya</h1>
+
+    <p class="subtitle">
+        Willkommen auf meiner kleinen Webseite!
+    </p>
+
+    <div class="facts">
+
+        <div class="fact-box">
+            <h2>Über mich</h2>
+            <p>
+                Ich heiße Maya, bin 20 Jahre alt und halb Russin und halb Portugiesin und daher mehrsprachig aufgwachsen.
+            </p>
+        </div>
+
+        <div class="fact-box">
+            <h2>Gap Year</h2>
+            <p>
+                Nach meinem Schulabschluss habe ich ein Gap Year gemacht und war viel in Südostasien unterwegs.
+            </p>
+        </div>
+
+        <div class="fact-box">
+            <h2>Studium</h2>
+            <p>
+                Ich möchte nächstes Jahr am liebsten dual Wirtschaftsinformatik studieren.
+            </p>
+        </div>
+
+        <div class="fact-box">
+            <h2>Fitness</h2>
+            <p>
+                Fitness ist eine große Leidenschaft von mir. Ich bin Fitnesstrainerin und besitze die A- und B-Lizenz.
+            </p>
+        </div>
+
+        <div class="fact-box">
+            <h2>Reiten</h2>
+            <p>
+                Ich reite sehr gerne und verbringe viel Zeit mit Pferden, durfte auch ein Praktikum auf einem Bauernhof machen.
+            </p>
+        </div>
+
+        <div class="fact-box">
+            <h2>Gedichte</h2>
+            <p>
+                Ich schreibe gerne Gedichte über meine Gefühle und Emotionen.
+            </p>
+        </div>
+
+        <div class="fact-box">
+            <h2>Reisen</h2>
+            <p>
+                Reisen gehört zu meinen größten Hobbys. Ich liebe es, neue Kulturen kennenzulernen und ganz besonders zu backpacken.
+            </p>
+        </div>
+
+    </div>
+
+    <hr>
+
+<div class="feedback">
+
+    <h2>⭐ Bewerte meine Webseite</h2>
+
+    <button onclick="bewertung(5)">⭐⭐⭐⭐⭐</button>
+    <button onclick="bewertung(4)">⭐⭐⭐⭐</button>
+    <button onclick="bewertung(3)">⭐⭐⭐</button>
+    <button onclick="bewertung(2)">⭐⭐</button>
+    <button onclick="bewertung(1)">⭐</button>
+
+
+    <p id="bewertungText"></p>
+
+</div>
+
+<br>
+
+<div class="feedback">
+
+    <h2>💕 Kleine Umfrage</h2>
+
+    <p>Denkst du, wir wären gute Freunde?</p>
+
+    <button onclick="freundJa()">Ja 😊</button>
+    <button onclick="freundNein()">Nein 😢</button>
+
+    <p id="freundAntwort"></p>
+
+    <div id="begruendungBox">
+        <label for="begruendung">Warum denkst du das?</label>
+
+        <textarea
+            id="begruendung"
+            placeholder="Schreib deine Begründung hier hinein..."
+        ></textarea>
+
+        <button onclick="begruendungSenden()">Antwort absenden</button>
+    </div>
+
+    <p id="dankeText"></p>
+
+</div>
+
+</div>
+
+<script src="scriptm.js"></script>
+
+</body>
+</html>

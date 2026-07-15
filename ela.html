@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Vorstellungsseite</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f1f8;
+            color: #241c2d;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2b1640, #6f3fa0);
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        header p {
+            margin: 0 0 10px;
+            color: #d7c6e8;
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        header h2 {
+            margin-top: 12px;
+            font-size: 20px;
+            font-weight: normal;
+            color: #eee4f7;
+        }
+
+        main {
+            max-width: 900px;
+            margin: -35px auto 40px;
+            padding: 0 20px;
+        }
+
+        .intro-card {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(43, 22, 64, 0.15);
+            border-top: 5px solid #8054a8;
+        }
+
+        .intro-card h2 {
+            margin-top: 0;
+            font-size: 28px;
+            color: #3e2457;
+        }
+
+        .intro-card p {
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 8px 22px rgba(43, 22, 64, 0.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #54306f;
+            font-size: 21px;
+        }
+
+        .card p {
+            line-height: 1.6;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tags span {
+            background: #eee7f5;
+            color: #4b2a65;
+            padding: 9px 14px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .highlight {
+            margin-top: 25px;
+            background: linear-gradient(135deg, #3b2352, #76509a);
+            color: white;
+            padding: 28px;
+            border-radius: 16px;
+        }
+
+        .highlight h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #6d6274;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            header h1 {
+                font-size: 34px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p>Accenture Schülerpraktikum</p>
+        <h1>Ela</h1>
+        <h2>15.07.2026</h2>
+    </header>
+
+    <main>
+
+        <section class="intro-card">
+            <h2>Über mich</h2>
+
+            <p>
+                Hallo, ich heiße <strong>Ela</strong> und nehme am
+                Accenture Online-Schülerpraktikum teil. Ich interessiere mich
+                für Softwareentwicklung und möchte mehr darüber lernen, wie
+                Webseiten entstehen und wie Entwickler im Team zusammenarbeiten.
+            </p>
+        </section>
+
+        <div class="grid">
+
+            <section class="card">
+                <h3>Meine Interessen</h3>
+
+                <div class="tags">
+                    <span>KI</span>
+                    <span>Weltall</span>
+                    <span>Programmieren</span>
+                    <span>Chemie</span>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>Meine Hobbys</h3>
+
+                <p>
+                    In meiner Freizeit höre ich gerne Musik, zeichne
+                  und programmiere gerne.
+               </p>
+            </section>
+
+        </div>
+
+        <section class="highlight">
+            <h3>Mein Ziel im Praktikum</h3>
+
+            <p>
+                Ich möchte besser verstehen, wie man gemeinsam an einem Projekt
+                arbeitet und wie HTML, CSS, Git und GitHub in der Praxis verwendet werden.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        Accenture Schülerpraktikum
+    </footer>
+
+</body>
+
+</html>
